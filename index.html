@@ -1,3 +1,36 @@
 <script>
-    console.log("Hello World!")
+    console.log("Hello World!") 
+//     
+//     getComputerChoice {
+//         generate random number between 0 and 3:
+//             math random multiplied by 3
+//   
+//         if number  < 1
+//             log rock
+//         if number  >1 and is  <2
+//             log paper
+//         if number  > 2
+//             log scissors
+//     }
+//
+    function getComputerChoice() {
+        var random = Math.random() * 3;
+        console.log(random);
+        if(random < 1 )
+        {
+            console.log("rock");
+        }
+
+        if(random > 1 && random < 2)
+        {
+            console.log("paper");
+        }
+
+        if(random > 2){
+            console.log("scissors");
+        }
+ }
+
 </script>
+
+
