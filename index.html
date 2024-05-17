@@ -1,5 +1,9 @@
+    <h1>
+        Rock Paper Scissors Game
+    </h1>
+
 <script>
-    console.log("Hello World!") 
+    
 //     
 //     getComputerChoice {
 //         generate random number between 0 and 3:
@@ -15,22 +19,75 @@
 //
     function getComputerChoice() {
         var random = Math.random() * 3;
-        console.log(random);
+        // console.log(random); testing random value
         if(random < 1 )
         {
-            console.log("rock");
+            return "rock";
         }
 
         if(random > 1 && random < 2)
         {
-            console.log("paper");
+            return "paper";
         }
 
         if(random > 2){
-            console.log("scissors");
+            return "scissors";
         }
  }
+        var humanScore = 0;
+        var compScore = 0;
+// play() {
+//     prompt user to choose rock paper or scissors
+//     generate random computer choice
+//     use a bunch of if statements to see who wins based of computer and human choice
+//     log result of match
+//     log score
 
-</script>
-
-
+// }
+        function playRound(HumanChoice, compChoice) {
+           
+            
+            if(compChoice == "scissors" && HumanChoice == "rock")
+            {
+                console.log("You Win!");
+                humanScore++;
+            }
+            else if(compChoice == "rock" && HumanChoice == "rock")
+            {
+                console.log("You Tied");
+            }
+            else if(compChoice == "paper" && HumanChoice == "rock")
+            {
+                console.log("Computer Wins");
+                compScore++;
+            }
+            if(compChoice == "scissors" && HumanChoice == "paper")
+            {
+                console.log("Computer Wins!");
+                compScore++;
+            }
+            else if(compChoice == "rock" && HumanChoice == "paper")
+            {
+                console.log("You Win");
+                humanScore++;
+            }
+            else if(compChoice == "paper" && HumanChoice == "paper")
+            {
+                console.log("You Tied");
+            }
+            if(compChoice == "scissors" && HumanChoice == "scissors")
+            {
+                console.log("You Tied");
+            }
+            else if(compChoice == "rock" && HumanChoice == "scissors")
+            {
+                console.log("Computer Wins");
+                compScore++;
+            }
+            else if(compChoice == "paper" && HumanChoice == "scissors")
+            {
+                console.log("You Win!");
+                humanScore++;
+            }
+            console.log("Your Score: " + humanScore + " Computer Score: " + compScore)
+    }
