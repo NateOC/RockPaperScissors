@@ -100,22 +100,20 @@
 // }
     function playGame()
     {
-        for(f = 0; f < 5; f++)
-        {
+        
             const humanChoice = prompt("Choose 'rock' 'paper' or 'scissors'");
             const compChoice = getComputerChoice();
             // console.log(compChoice); //testing computer choice
             // console.log(HumanChoice);//testing human choice 
             playRound(humanChoice, compChoice);
-        }
-        if(humanScore == compScore)
-            console.log("You tied!")
-        else if(humanScore > compScore)
-            console.log("You won the Game!")
-        else   
-            console.log("Sorry, you lost!")
-        humanScore = 0;
-        compScore = 0;
+        // if(humanScore == compScore)
+        //     console.log("You tied!")
+        // else if(humanScore > compScore)
+        //     console.log("You won the Game!")
+        // else   
+        //     console.log("Sorry, you lost!")
+        // humanScore = 0;
+        // compScore = 0;
     }
         </script>
 
