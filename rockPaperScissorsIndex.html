@@ -1,122 +1,150 @@
-    <h1>
-        Rock Paper Scissors Game
-    </h1>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-<script>
+    <script>
     
-//     
-//     getComputerChoice {
-//         generate random number between 0 and 3:
-//             math random multiplied by 3
-//   
-//         if number  < 1
-//             log rock
-//         if number  >1 and is  <2
-//             log paper
-//         if number  > 2
-//             log scissors
-//     }
-//
-    function getComputerChoice() {
-        var random = Math.random() * 3;
-        // console.log(random); testing random value
-        if(random < 1 )
-        {
-            return "rock";
-        }
-
-        if(random > 1 && random < 2)
-        {
-            return "paper";
-        }
-
-        if(random > 2){
-            return "scissors";
-        }
- }
-        var humanScore = 0;
-        var compScore = 0;
-// play() {
-//     prompt user to choose rock paper or scissors
-//     generate random computer choice
-//     use a bunch of if statements to see who wins based of computer and human choice
-//     log result of match
-//     log score
-
-// }
-        function playRound(HumanChoice, compChoice) {
-           
-            
-            if(compChoice == "scissors" && HumanChoice == "rock")
-            {
-                console.log("You Win!");
-                humanScore++;
-            }
-            else if(compChoice == "rock" && HumanChoice == "rock")
-            {
-                console.log("You Tied");
-            }
-            else if(compChoice == "paper" && HumanChoice == "rock")
-            {
-                console.log("Computer Wins");
-                compScore++;
-            }
-            if(compChoice == "scissors" && HumanChoice == "paper")
-            {
-                console.log("Computer Wins!");
-                compScore++;
-            }
-            else if(compChoice == "rock" && HumanChoice == "paper")
-            {
-                console.log("You Win");
-                humanScore++;
-            }
-            else if(compChoice == "paper" && HumanChoice == "paper")
-            {
-                console.log("You Tied");
-            }
-            if(compChoice == "scissors" && HumanChoice == "scissors")
-            {
-                console.log("You Tied");
-            }
-            else if(compChoice == "rock" && HumanChoice == "scissors")
-            {
-                console.log("Computer Wins");
-                compScore++;
-            }
-            else if(compChoice == "paper" && HumanChoice == "scissors")
-            {
-                console.log("You Win!");
-                humanScore++;
-            }
-            console.log("Your Score: " + humanScore + " Computer Score: " + compScore)
-    }
-// playGame(){
-//     for loop that goes five times
-//         play a round
-//     check score using if 
-//         log win lose or tie
-//      reset score
-// }
-    function playGame()
-    {
+        //     
+        //     getComputerChoice {
+        //         generate random number between 0 and 3:
+        //             math random multiplied by 3
+        //   
+        //         if number  < 1
+        //             log rock
+        //         if number  >1 and is  <2
+        //             log paper
+        //         if number  > 2
+        //             log scissors
+        //     }
+        //
+            function getComputerChoice() {
+                var random = Math.random() * 3;
+                // console.log(random); testing random value
+                if(random < 1 )
+                {
+                    return "rock";
+                }
         
-            const humanChoice = prompt("Choose 'rock' 'paper' or 'scissors'");
-            const compChoice = getComputerChoice();
-            // console.log(compChoice); //testing computer choice
-            // console.log(HumanChoice);//testing human choice 
-            playRound(humanChoice, compChoice);
-        // if(humanScore == compScore)
-        //     console.log("You tied!")
-        // else if(humanScore > compScore)
-        //     console.log("You won the Game!")
-        // else   
-        //     console.log("Sorry, you lost!")
-        // humanScore = 0;
-        // compScore = 0;
-    }
-        </script>
+                if(random > 1 && random < 2)
+                {
+                    return "paper";
+                }
+        
+                if(random > 2){
+                    return "scissors";
+                }
+         }
+                var humanScore = 0;
+                var compScore = 0;
+        // play() {
+        //     prompt user to choose rock paper or scissors
+        //     generate random computer choice
+        //     use a bunch of if statements to see who wins based of computer and human choice
+        //     log result of match
+        //     log score
+        
+        // }
 
-<button onclick="playGame()"> "Click here to Play" </button>
+        // creating result div
+        const result = document.createElement("div");
+        const score = document.createElement("div");
+                function playRound(HumanChoice, compChoice) {
+                   
+                    
+                    if(compChoice == "scissors" && HumanChoice == "rock")
+                    {
+                        result.textContent = "You Win!";
+                        humanScore++;
+                    }
+                    else if(compChoice == "rock" && HumanChoice == "rock")
+                    {
+                        result.textContent = "You Tied";
+                    }
+                    else if(compChoice == "paper" && HumanChoice == "rock")
+                    {
+                        result.textContent = "Computer Wins";
+                        compScore++;
+                    }
+                    if(compChoice == "scissors" && HumanChoice == "paper")
+                    {
+                        result.textContent = "Computer Wins";
+                        compScore++;
+                    }
+                    else if(compChoice == "rock" && HumanChoice == "paper")
+                    {
+                        result.textContent = "You Win!";
+                        humanScore++;
+                    }
+                    else if(compChoice == "paper" && HumanChoice == "paper")
+                    {
+                        result.textContent = "You Tied";
+                    }
+                    if(compChoice == "scissors" && HumanChoice == "scissors")
+                    {
+                        result.textContent = "You Tied";
+                    }
+                    else if(compChoice == "rock" && HumanChoice == "scissors")
+                    {
+                        result.textContent = "Computer Wins";
+                        compScore++;
+                    }
+                    else if(compChoice == "paper" && HumanChoice == "scissors")
+                    {
+                        result.textContent = "You Win!";
+                        humanScore++;result
+                    }
+                    score.textContent = "Your Score: " + humanScore + " Computer Score: " + compScore;
+            }
+        // playGame(){
+        //     for loop that goes five times
+        //         play a round
+        //     check score using if 
+        //         log win lose or tie
+        //      reset score
+        // }
+                playGame()
+                {
+                    const humanChoice = prompt("Choose 'rock' 'paper' or 'scissors'");
+                    const compChoice = getComputerChoice();
+                    // console.log(compChoice); //testing computer choice
+                    // console.log(HumanChoice);//testing human choice 
+                    playRound(humanChoice, compChoice);
+                // if(humanScore == compScore)
+                //     console.log("You tied!")
+                // else if(humanScore > compScore)
+                //     console.log("You won the Game!")
+                // else   
+                //     console.log("Sorry, you lost!")
+                // humanScore = 0;
+                // compScore = 0;
+                }
+                </script>
+
+ </head>
+ <body>
+    <h1>
+        Rock Paper Scissors Game:
+    </h1>
+    <h2>
+        Click one of these buttons to play a round with your choice. After 5 rounds the winner will be announced.
+    </h2>
+
+
+<button onclick="playRound('rock', getComputerChoice()), rounds += 1"> Rock </button>
+<button onclick="playRound('paper', getComputerChoice()), rounds += 1 "> Paper </button>
+<button onclick="playRound('scissors', getComputerChoice()), rounds += 1"> Scissors</button>
+
+    <h2>
+        Round Winner: <div class = "result"></div>
+        <div class = "score"></div>
+    </h2>
+ </body>
+ </html>   
+
+
+
         
 
