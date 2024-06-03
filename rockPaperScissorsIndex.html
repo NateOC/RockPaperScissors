@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+ </head>
+ <body>
+
+    <h1>
+        Rock Paper Scissors Game:
+    </h1>
+    <h2>
+        Click one of these buttons to play a round with your choice.
+    </h2>
+    <section>
+
+    </section>
+
+
+
+    <button id = "btnr"> Rock </button>
+    <button id = "btnp"> Paper </button>
+    <button id = "btns"> Scissors</button>
     <script>
     
         //     
@@ -49,55 +68,53 @@
         // }
 
         // creating result div
-        const result = document.createElement("div");
-        const score = document.createElement("div");
+
                 function playRound(HumanChoice, compChoice) {
                    
                     
                     if(compChoice == "scissors" && HumanChoice == "rock")
-                    {
-                        result.textContent = "You Win!";
+                    { 
                         humanScore++;
                     }
-                    else if(compChoice == "rock" && HumanChoice == "rock")
-                    {
-                        result.textContent = "You Tied";
-                    }
+
                     else if(compChoice == "paper" && HumanChoice == "rock")
                     {
-                        result.textContent = "Computer Wins";
                         compScore++;
                     }
+
                     if(compChoice == "scissors" && HumanChoice == "paper")
                     {
-                        result.textContent = "Computer Wins";
                         compScore++;
                     }
                     else if(compChoice == "rock" && HumanChoice == "paper")
                     {
-                        result.textContent = "You Win!";
                         humanScore++;
                     }
-                    else if(compChoice == "paper" && HumanChoice == "paper")
+
+                    if(compChoice == "rock" && HumanChoice == "scissors")
                     {
-                        result.textContent = "You Tied";
-                    }
-                    if(compChoice == "scissors" && HumanChoice == "scissors")
-                    {
-                        result.textContent = "You Tied";
-                    }
-                    else if(compChoice == "rock" && HumanChoice == "scissors")
-                    {
-                        result.textContent = "Computer Wins";
                         compScore++;
                     }
                     else if(compChoice == "paper" && HumanChoice == "scissors")
                     {
-                        result.textContent = "You Win!";
-                        humanScore++;result
+                        humanScore++;
                     }
-                    score.textContent = "Your Score: " + humanScore + " Computer Score: " + compScore;
+
+                const sect = document.querySelector("section");
+                const score = document.createElement("p");
+                score.textContent = "Your Score: " + humanScore + " Computer Score: " + compScore;
+                sect.appendChild(score);
             }
+
+            const btnr = document.querySelector("#btnr");
+            btnr.onclick = () => playRound("rock", getComputerChoice());
+
+            const btnp = document.querySelector("#btnp");
+            btnp.onclick = () => playRound("paper", getComputerChoice());
+
+            const btns = document.querySelector("#btns");
+            btns.onclick = () => playRound("scissors", getComputerChoice());
+
         // playGame(){
         //     for loop that goes five times
         //         play a round
@@ -105,42 +122,26 @@
         //         log win lose or tie
         //      reset score
         // }
-                playGame()
-                {
-                    const humanChoice = prompt("Choose 'rock' 'paper' or 'scissors'");
-                    const compChoice = getComputerChoice();
-                    // console.log(compChoice); //testing computer choice
-                    // console.log(HumanChoice);//testing human choice 
-                    playRound(humanChoice, compChoice);
-                // if(humanScore == compScore)
-                //     console.log("You tied!")
-                // else if(humanScore > compScore)
-                //     console.log("You won the Game!")
-                // else   
-                //     console.log("Sorry, you lost!")
-                // humanScore = 0;
-                // compScore = 0;
-                }
+                // playGame()
+                // {
+                //     const humanChoice = prompt("Choose 'rock' 'paper' or 'scissors'");
+                //     const compChoice = getComputerChoice();
+                //     // console.log(compChoice); //testing computer choice
+                //     // console.log(HumanChoice);//testing human choice 
+                //     playRound(humanChoice, compChoice);
+                // // if(humanScore == compScore)
+                // //     console.log("You tied!")
+                // // else if(humanScore > compScore)
+                // //     console.log("You won the Game!")
+                // // else   
+                // //     console.log("Sorry, you lost!")
+                // // humanScore = 0;
+                // // compScore = 0;
+                // }
                 </script>
 
- </head>
- <body>
-    <h1>
-        Rock Paper Scissors Game:
-    </h1>
-    <h2>
-        Click one of these buttons to play a round with your choice. After 5 rounds the winner will be announced.
-    </h2>
 
 
-<button onclick="playRound('rock', getComputerChoice()), rounds += 1"> Rock </button>
-<button onclick="playRound('paper', getComputerChoice()), rounds += 1 "> Paper </button>
-<button onclick="playRound('scissors', getComputerChoice()), rounds += 1"> Scissors</button>
-
-    <h2>
-        Round Winner: <div class = "result"></div>
-        <div class = "score"></div>
-    </h2>
  </body>
  </html>   
 
