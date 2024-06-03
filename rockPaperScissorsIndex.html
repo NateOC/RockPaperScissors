@@ -15,12 +15,9 @@
     <h2>
         Click one of these buttons to play a round with your choice.
     </h2>
-    <section>
+    <h3 id = 'score'>   </h3>
 
-    </section>
-
-
-
+    <div id = "result"></div>
     <button id = "btnr"> Rock </button>
     <button id = "btnp"> Paper </button>
     <button id = "btns"> Scissors</button>
@@ -100,11 +97,26 @@
                         humanScore++;
                     }
 
-                const sect = document.querySelector("section");
-                const score = document.createElement("p");
-                score.textContent = "Your Score: " + humanScore + " Computer Score: " + compScore;
-                sect.appendChild(score);
+            const score = document.querySelector("h3");
+            const scoreH = document.createElement("h3");
+            score.innerHTML = "Your Score: " + humanScore + " Computer Score: " + compScore;
+            
+            const result = document.querySelector("div");
+
+            if(humanScore == 5)
+            {
+                const results = document.createElement("h2");
+                results.textContent = "You Win! Refresh to play again."
+                result.appendChild(results);
             }
+            if(compScore == 5)
+            {
+                const results = document.createElement("h2");
+                results.textContent = "Computer Wins! Refresh to play again."
+                result.appendChild(results);
+            }
+            }
+            
 
             const btnr = document.querySelector("#btnr");
             btnr.onclick = () => playRound("rock", getComputerChoice());
